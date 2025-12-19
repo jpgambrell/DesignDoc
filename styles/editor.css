@@ -1,0 +1,100 @@
+/* Additional CodeMirror custom styles */
+
+.cm-editor.cm-focused {
+  outline: none;
+}
+
+/* Markdown syntax highlighting in edit mode */
+.cm-heading {
+  font-weight: 600;
+}
+
+.cm-heading1 {
+  font-size: 1.5em;
+}
+
+.cm-heading2 {
+  font-size: 1.3em;
+}
+
+.cm-heading3 {
+  font-size: 1.1em;
+}
+
+.cm-link {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.dark .cm-link {
+  color: #60a5fa;
+}
+
+.cm-strong {
+  font-weight: 600;
+}
+
+.cm-emphasis {
+  font-style: italic;
+}
+
+.cm-code,
+.cm-monospace {
+  font-family: "SF Mono", Monaco, "Consolas", monospace;
+  background: #f4f4f5;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+.dark .cm-code,
+.dark .cm-monospace {
+  background: #27272a;
+}
+
+.cm-quote {
+  color: #71717a;
+  font-style: italic;
+}
+
+.dark .cm-quote {
+  color: #a1a1aa;
+}
+
+/* Line number styling */
+.cm-lineNumbers {
+  font-family: "SF Mono", Monaco, "Consolas", monospace;
+  font-size: 0.85em;
+}
+
+.cm-gutterElement {
+  padding: 0 8px;
+}
+
+/* Cursor and selection */
+.cm-cursor {
+  border-left-color: #3b82f6;
+}
+
+.dark .cm-cursor {
+  border-left-color: #60a5fa;
+}
+
+.cm-selectionBackground {
+  background: #3b82f640 !important;
+}
+
+.dark .cm-selectionBackground {
+  background: #60a5fa40 !important;
+}
+
+/* Matching brackets */
+.cm-matchingBracket {
+  background: #22c55e40;
+  outline: 1px solid #22c55e;
+}
+
+.cm-nonmatchingBracket {
+  background: #ef444440;
+  outline: 1px solid #ef4444;
+}
+

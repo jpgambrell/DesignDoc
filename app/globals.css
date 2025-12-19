@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark ::-webkit-scrollbar-track {
+  background: #27272a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #52525b;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+/* Prose customization for better readability */
+.prose {
+  max-width: none;
+}
+
+.prose pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* Ensure code blocks don't have double backgrounds */
+.prose pre code {
+  background: transparent;
+}
+
+/* Make tables look better */
+.prose table {
+  width: 100%;
+}
+
+/* Fix for nested lists */
+.prose ul ul,
+.prose ul ol,
+.prose ol ul,
+.prose ol ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Better link styling */
+.prose a {
+  color: #3b82f6;
+  text-decoration: underline;
+  text-decoration-color: #3b82f680;
+  transition: text-decoration-color 0.2s;
+}
+
+.prose a:hover {
+  text-decoration-color: #3b82f6;
+}
+
+.dark .prose a {
+  color: #60a5fa;
+  text-decoration-color: #60a5fa80;
+}
+
+.dark .prose a:hover {
+  text-decoration-color: #60a5fa;
+}
+
+/* CodeMirror theme enhancements */
+.cm-editor {
+  height: 100%;
+}
+
+.cm-scroller {
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+    "Courier New", monospace;
+}
+
+.dark .cm-editor {
+  background: #18181b;
+  color: #fafafa;
+}
+
+.dark .cm-gutters {
+  background: #09090b;
+  color: #71717a;
+  border-right: 1px solid #27272a;
+}
+
+.dark .cm-activeLineGutter {
+  background: #27272a;
+}
+
+.dark .cm-activeLine {
+  background: #27272a40;
+}
+
+/* Print styles for PDF export */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .prose {
+    max-width: 100%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animation for mode transitions */
+.mode-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.dark button:focus-visible,
+.dark input:focus-visible,
+.dark textarea:focus-visible {
+  outline-color: #60a5fa;
 }
